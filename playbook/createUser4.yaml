@@ -1,0 +1,11 @@
+- name: Create user
+  hosts: workers
+  become: true
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ user.name }}"
+        password: "{{ user.pass | password_hash('sha512') }}"
+        shell: /bin/bash
+        createhome: yes
+        groups: sudo

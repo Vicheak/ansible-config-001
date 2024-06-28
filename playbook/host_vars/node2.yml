@@ -1,0 +1,4 @@
+#host_vars/node2.yml
+user:
+  name: test_node2
+  pass: node2@123

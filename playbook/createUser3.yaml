@@ -1,0 +1,16 @@
+- name: Create user
+  hosts: workers
+  become: true
+  vars:
+    user_name: ansible_user
+    user_password: "12345678" 
+  vars_files:
+    - vars/secrets.yml
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ user_name }}"
+        password: "{{ user.pass | password_hash('sha512') }}"
+        shell: /bin/bash
+        createhome: yes
+        groups: sudo

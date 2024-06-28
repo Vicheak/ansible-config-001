@@ -1,0 +1,12 @@
+---
+- name: Delete Nginx
+  hosts: workers 
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+    - name: Delete Nginx
+      apt:
+        name: nginx
+        state: absent

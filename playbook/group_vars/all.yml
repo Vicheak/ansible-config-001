@@ -1,0 +1,4 @@
+#group_vars/all.yml 
+user:
+  name: test_group_vars
+  pass: test@123

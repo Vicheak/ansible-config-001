@@ -1,0 +1,10 @@
+- name: Create user
+  hosts: workers
+  become: true
+  vars:
+    user_name: ansible_user
+    user_password: "12345678" 
+
+  tasks:
+    - name: delete user
+      command: userdel -r ansible_user

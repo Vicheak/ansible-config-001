@@ -1,0 +1,19 @@
+---
+- name: Deploy application with Docker Compose
+  hosts: workers
+  become: true
+  tasks:
+    - name: Install Docker Compose
+      apt:
+        name: docker-compose
+        state: present
+    - name: Start Docker Compose
+      docker_compose:
+        project_name: myapp
+        definition:
+          version: '3.8'
+          services:
+            nginx:
+              image: nginx
+              ports:
+                - "82:80"
