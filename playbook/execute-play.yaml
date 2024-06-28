@@ -1,0 +1,11 @@
+- name: Execute ShellScript 
+  hosts: workers
+  become: true
+  tasks:
+    - name: Create a directory 
+      file: 
+        path: /home/vicheak/ansible-folder-test
+        state: directory
+        mode: 0755
+    - name: Copy file to remote server
+      command: cp -r /home/vicheak/ansible-config-001/playbook/shellscript/script1.sh /home/vicheak/ansible-folder-test
