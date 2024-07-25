@@ -1,2 +1,2 @@
 [workers]
-node1 ansible_host=159.223.41.232 ansible_user=vicheak ansible_ssh_private_key_file=/home/vicheak/.ssh/master ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+node1 ansible_host=159.223.41.232 ansible_user=vicheak ansible_ssh_private_key_file=/root/.ssh/master ansible_ssh_common_args='-o StrictHostKeyChecking=no'
