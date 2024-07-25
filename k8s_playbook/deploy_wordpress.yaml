@@ -13,4 +13,4 @@
         src: "./shellscript/wordpress_deploy.sh"
         dest: /home/vicheak/deploy/wordpress_deploy.sh
     - name: Run script to deploy
-      command: sh /home/vicheak/deploy/wordpress_deploy.sh "{{ fullImageName }}"
+      command: sh /home/vicheak/deploy/wordpress_deploy.sh
