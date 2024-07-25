@@ -15,7 +15,7 @@
         mode: 0755
     - name: Copy k8s deployment file
       copy:
-        src: "./shellscript/spring_deploy_with_cert-manager.sh"
-        dest: /home/vicheak/deploy/spring_deploy_with_cert-manager.sh
+        src: "./shellscript/portfolio_deploy.sh"
+        dest: /home/vicheak/deploy/portfolio_deploy.sh
     - name: Run script to deploy
-      command: sh /home/vicheak/deploy/spring_deploy_with_cert-manager.sh "{{ fullImageName }}"
+      command: sh /home/vicheak/deploy/portfolio_deploy.sh "{{ fullImageName }}"
