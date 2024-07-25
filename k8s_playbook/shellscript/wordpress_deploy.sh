@@ -142,6 +142,7 @@ spec:
     - port: 80
       protocol: TCP
   type: NodePort
+EOF
 )
 
 TMP_FILE=$(mktemp)
