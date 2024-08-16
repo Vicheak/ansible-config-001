@@ -1,0 +1,16 @@
+- name: Run deploy with k8s
+  hosts: workers
+  become: true
+
+  tasks:
+    - name: Create directory 
+      file:
+        path: /home/vicheak/deploy
+        state: directory
+        mode: 0755
+    - name: Copy k8s config file
+      copy:
+        src: "./testshellscript/apply_spring_argocd.sh"
+        dest: /home/vicheak/deploy/apply_spring_argocd.sh
+    - name: Run script to deploy
+      command: sh /home/vicheak/deploy/apply_spring_argocd.sh 
