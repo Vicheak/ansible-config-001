@@ -1,0 +1,2 @@
+[workers]
+node1 ansible_host=167.71.215.34 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/master-jenkins ansible_ssh_common_args='-o StrictHostKeyChecking=no'

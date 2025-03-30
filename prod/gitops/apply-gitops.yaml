@@ -1,0 +1,16 @@
+- name: Run deploy gitops with k8s
+  hosts: workers
+  become: true
+
+  tasks:
+    - name: Create directory 
+      file:
+        path: /root/gitops-config
+        state: directory
+        mode: 0755
+    - name: Copy k8s config file
+      copy:
+        src: "../shellscript/apply-shellscript-manifest.sh"
+        dest: /root/gitops-config/apply-shellscript-manifest.sh
+    - name: Run script to deploy
+      command: sh /root/gitops-config/apply-shellscript-manifest.sh
