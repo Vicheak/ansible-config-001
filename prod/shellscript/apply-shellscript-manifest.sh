@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/Vicheak/k8s_orchestration.git
     targetRevision: main
-    path: test/api
+    path: test_pipeline/api
   destination:
     namespace: default
     server: https://kubernetes.default.svc
